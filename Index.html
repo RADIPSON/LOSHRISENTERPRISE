@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 
 <head>
@@ -1078,8 +1078,8 @@
         </div>
 
         <div
-            class="relative bg-white/10 backdrop-blur-2xl p-10 rounded-3xl shadow-2xl w-full max-w-md border border-white/20 ring-1 ring-white/10">
-            <div class="flex flex-col items-center mb-8">
+            class="relative bg-white/10 backdrop-blur-2xl p-6 md:p-10 rounded-3xl shadow-2xl w-[90%] max-w-md border border-white/20 ring-1 ring-white/10 mx-auto">
+            <div class="flex flex-col items-center mb-6 md:mb-8">
                 <img src="https://drive.google.com/thumbnail?id=1_vs58Anu0Sa-d1yqwKGcUXub6NrSt3o_&sz=w500"
                     alt="Loshris Icon" class="w-20 h-20 object-contain mb-5 drop-shadow-xl rounded-2xl">
                 <h1 class="text-3xl font-black text-white">LOSHRIS Enterprise</h1>
@@ -1123,7 +1123,11 @@
     <!-- ======== APP WRAPPER ======== -->
     <div id="app-wrapper" class="hidden flex h-screen w-full overflow-hidden">
         <!-- ======== SIDEBAR ======== -->
-        <aside class="w-60 bg-white border-r border-gray-100 flex flex-col z-20 shrink-0 shadow-sm">
+        <aside id="sidebar" class="w-60 bg-white border-r border-gray-100 flex-col z-[100] shrink-0 shadow-sm fixed md:relative h-full transition-transform duration-300 -translate-x-full md:translate-x-0 flex">
+            <!-- Close button for mobile -->
+            <button onclick="document.getElementById('sidebar').classList.add('-translate-x-full')" class="md:hidden absolute top-4 right-3 text-gray-400 p-1 hover:bg-gray-100 rounded-lg">
+                <span class="material-icons">close</span>
+            </button>
             <div class="px-5 py-4 flex items-center gap-3 border-b border-gray-100">
                 <img src="https://drive.google.com/thumbnail?id=1_vs58Anu0Sa-d1yqwKGcUXub6NrSt3o_&sz=w500"
                     alt="Loshris Icon" class="w-9 h-9 object-contain drop-shadow-md rounded-xl">
@@ -1250,8 +1254,13 @@
 
             <!-- TOPBAR -->
             <header
-                class="bg-white border-b border-gray-100 px-8 py-3.5 flex justify-between items-center shadow-sm z-10 shrink-0">
-                <h1 class="text-xl font-black text-gray-900 tracking-tight" id="page-title">Dashboard Overview</h1>
+                class="bg-white border-b border-gray-100 px-4 md:px-8 py-3.5 flex justify-between items-center shadow-sm z-10 shrink-0">
+                <div class="flex items-center gap-3">
+                    <button onclick="document.getElementById('sidebar').classList.remove('-translate-x-full')" class="md:hidden text-gray-600 p-1 rounded-lg hover:bg-gray-100 transition">
+                        <span class="material-icons">menu</span>
+                    </button>
+                    <h1 class="text-lg md:text-xl font-black text-gray-900 tracking-tight" id="page-title">Dashboard Overview</h1>
+                </div>
                 <div class="flex items-center gap-4">
                     <!-- Mini Clock -->
                     <div class="hidden md:flex items-center gap-3 px-5 py-2.5 bg-gray-50 rounded-2xl border border-gray-100">
@@ -1306,7 +1315,7 @@
             </header>
 
             <!-- CONTENT AREA -->
-            <div class="flex-1 overflow-y-auto p-8 relative">
+            <div class="flex-1 overflow-y-auto p-4 md:p-8 relative">
 
                 <!-- FLOATING SLATE CAPSULE LOADER (MODERN & NON-BLOCKING) -->
                 <div id="loader"
