@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>LOSHRIS Enterprise</title>
 
-    <!-- PWA / Meta Tags -->
     <meta name="theme-color" content="#0b0b0c">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,23 +15,21 @@
         html, body {
             margin: 0;
             padding: 0;
-            width: 100vw;
-            height: 100vh;
-            height: 100dvh; /* dynamic viewport height, lebih akurat di browser mobile */
+            width: 100%;
+            height: 100%;
             overflow: hidden; /* Mencegah scroll ganda */
-            background-color: #0b0b0c; /* samakan dgn tema gelap LOSHRIS, biar gak ada flash putih saat load */
+            background-color: #0b0b0c; /* Samakan dengan tema gelap LOSHRIS */
         }
         iframe {
             position: fixed;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
-            height: 100dvh;
+            width: 100%;
+            height: 100dvh; /* Dynamic viewport height untuk akurasi browser mobile */
             border: none;
             display: block;
             background-color: #0b0b0c;
-            /* perhitungkan safe-area (notch, home indicator) */
+            /* Perhitungkan safe-area (notch, home indicator di iOS/Android modern) */
             padding-top: env(safe-area-inset-top);
             padding-bottom: env(safe-area-inset-bottom);
             box-sizing: border-box;
@@ -41,8 +38,12 @@
 </head>
 <body>
 
-    <!-- Ganti URL di bawah ini dengan URL Deployment Google Apps Script Anda (yang berakhiran /exec) -->
-    <iframe src="https://script.google.com/macros/s/AKfycbz8f6E2WkdFZMTLEGrPwbG86q5Doq1myEH7YbZtvlLZyG9JF1xvsh39iTcidgWOFclwVA/exec" allowfullscreen></iframe>
+    <iframe 
+        src="https://script.google.com/macros/s/AKfycbz8f6E2WkdFZMTLEGrPwbG86q5Doq1myEH7YbZtvlLZyG9JF1xvsh39iTcidgWOFclwVA/exec" 
+        title="LOSHRIS Enterprise App"
+        allow="fullscreen; clipboard-read; clipboard-write" 
+        allowfullscreen>
+    </iframe>
 
 </body>
 </html>
