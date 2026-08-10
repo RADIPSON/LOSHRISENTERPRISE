@@ -2,54 +2,59 @@
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>LOSHRIS Enterprise</title>
+<title>LOSHRIS Enterprise</title>
 
-    <meta name="theme-color" content="#0b0b0c">
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="icon" href="icon.png">
+<meta name="theme-color" content="#0b0b0c">
+@@ -12,20 +14,25 @@
+<link rel="icon" href="icon.png">
 
-    <style>
+<style>
+        html, body {
         html,
         body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
+margin: 0;
+padding: 0;
+width: 100%;
+height: 100%;
+            overflow: hidden; /* Mencegah scroll ganda */
+            background-color: #0b0b0c; /* Samakan dengan tema gelap LOSHRIS */
             overflow: hidden;
             /* Mencegah scroll ganda */
             background-color: #0b0b0c;
             /* Samakan dengan tema gelap LOSHRIS */
-        }
+}
 
-        iframe {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+iframe {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+            height: 100dvh; /* Dynamic viewport height untuk akurasi browser mobile */
             height: 100dvh;
             /* Dynamic viewport height untuk akurasi browser mobile */
-            border: none;
-            display: block;
-            background-color: #0b0b0c;
-            /* Perhitungkan safe-area (notch, home indicator di iOS/Android modern) */
-            padding-top: env(safe-area-inset-top);
-            padding-bottom: env(safe-area-inset-bottom);
-            box-sizing: border-box;
-        }
-    </style>
+border: none;
+display: block;
+background-color: #0b0b0c;
+@@ -36,14 +43,14 @@
+}
+</style>
 </head>
 
 <body>
 
+    <iframe 
+        src="https://script.google.com/macros/s/AKfycbz8f6E2WkdFZMTLEGrPwbG86q5Doq1myEH7YbZtvlLZyG9JF1xvsh39iTcidgWOFclwVA/exec" 
+        title="LOSHRIS Enterprise App"
+        allow="fullscreen; clipboard-read; clipboard-write" 
+        allowfullscreen>
     <iframe
         src="https://script.google.com/macros/s/AKfycbz8f6E2WkdFZMTLEGrPwbG86q5Doq1myEH7YbZtvlLZyG9JF1xvsh39iTcidgWOFclwVA/exec"
         title="LOSHRIS Enterprise App" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen>
-    </iframe>
+</iframe>
 
 </body>
 
