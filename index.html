@@ -21,37 +21,35 @@
             width: 100%;
             height: 100%;
             overflow: hidden;
+            /* Mencegah scroll ganda */
             background-color: #0b0b0c;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            /* Samakan dengan tema gelap LOSHRIS */
         }
 
-        #loading-text {
-            color: #999;
-            font-family: sans-serif;
-            font-size: 13px;
+        iframe {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100dvh;
+            /* Dynamic viewport height untuk akurasi browser mobile */
+            border: none;
+            display: block;
+            background-color: #0b0b0c;
+            /* Perhitungkan safe-area (notch, home indicator di iOS/Android modern) */
+            padding-top: env(safe-area-inset-top);
+            padding-bottom: env(safe-area-inset-bottom);
+            box-sizing: border-box;
         }
     </style>
 </head>
 
 <body>
 
-    <!--
-      Sengaja TIDAK memakai <iframe> lagi: nge-iframe URL Apps Script menambah satu
-      lapis nesting iframe DI ATAS sandbox iframe internal milik Apps Script sendiri.
-      Nested iframe 2+ level itu yang bikin browser mobile mengabaikan meta viewport
-      Index.html, sehingga kontennya dirender di lebar desktop lalu ke-squeeze/kepotong
-      ke kotak iframe (gejala: card login sempit, nempel ke satu sisi). Redirect
-      langsung = tidak ada iframe tambahan = viewport mobile dihormati normal, sama
-      seperti buka /exec langsung di tab baru.
-    -->
-    <p id="loading-text">Membuka LOSHRIS Enterprise...</p>
-    <script>
-        window.location.replace(
-            "https://script.google.com/macros/s/AKfycbz8f6E2WkdFZMTLEGrPwbG86q5Doq1myEH7YbZtvlLZyG9JF1xvsh39iTcidgWOFclwVA/exec"
-        );
-    </script>
+    <iframe
+        src="https://script.google.com/macros/s/AKfycbz8f6E2WkdFZMTLEGrPwbG86q5Doq1myEH7YbZtvlLZyG9JF1xvsh39iTcidgWOFclwVA/exec"
+        title="LOSHRIS Enterprise App" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen>
+    </iframe>
 
 </body>
 
